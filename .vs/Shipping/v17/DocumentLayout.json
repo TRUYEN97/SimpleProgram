@@ -1,0 +1,120 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Administrator\\Desktop\\ft7\\Shipping Program\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{46AA41EE-E9C8-4FAF-AA83-B8C14B131D32}|Shipping\\Shipping.csproj|C:\\Users\\Administrator\\Desktop\\ft7\\Shipping Program\\shipping\\services\\sfis.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46AA41EE-E9C8-4FAF-AA83-B8C14B131D32}|Shipping\\Shipping.csproj|solutionrelative:shipping\\services\\sfis.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46AA41EE-E9C8-4FAF-AA83-B8C14B131D32}|Shipping\\Shipping.csproj|c:\\users\\administrator\\desktop\\ft7\\shipping program\\shipping\\services\\ccdchecker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46AA41EE-E9C8-4FAF-AA83-B8C14B131D32}|Shipping\\Shipping.csproj|solutionrelative:shipping\\services\\ccdchecker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46AA41EE-E9C8-4FAF-AA83-B8C14B131D32}|Shipping\\Shipping.csproj|C:\\Users\\Administrator\\Desktop\\ft7\\Shipping Program\\shipping\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46AA41EE-E9C8-4FAF-AA83-B8C14B131D32}|Shipping\\Shipping.csproj|solutionrelative:shipping\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46AA41EE-E9C8-4FAF-AA83-B8C14B131D32}|Shipping\\Shipping.csproj|C:\\Users\\Administrator\\Desktop\\ft7\\Shipping Program\\shipping\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{46AA41EE-E9C8-4FAF-AA83-B8C14B131D32}|Shipping\\Shipping.csproj|solutionrelative:shipping\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46AA41EE-E9C8-4FAF-AA83-B8C14B131D32}|Shipping\\Shipping.csproj|C:\\Users\\Administrator\\Desktop\\ft7\\Shipping Program\\shipping\\services\\loganalysis.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46AA41EE-E9C8-4FAF-AA83-B8C14B131D32}|Shipping\\Shipping.csproj|solutionrelative:shipping\\services\\loganalysis.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46AA41EE-E9C8-4FAF-AA83-B8C14B131D32}|Shipping\\Shipping.csproj|C:\\Users\\Administrator\\Desktop\\ft7\\Shipping Program\\shipping\\services\\dhcp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46AA41EE-E9C8-4FAF-AA83-B8C14B131D32}|Shipping\\Shipping.csproj|solutionrelative:shipping\\services\\dhcp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\ft7\\Shipping Program\\Shipping\\Form1.cs",
+              "RelativeDocumentMoniker": "Shipping\\Form1.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\ft7\\Shipping Program\\Shipping\\Form1.cs [Design]",
+              "RelativeToolTip": "Shipping\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T11:54:13.942Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Sfis.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\ft7\\Shipping Program\\Shipping\\Services\\Sfis.cs",
+              "RelativeDocumentMoniker": "Shipping\\Services\\Sfis.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\ft7\\Shipping Program\\Shipping\\Services\\Sfis.cs",
+              "RelativeToolTip": "Shipping\\Services\\Sfis.cs",
+              "ViewState": "AgIAAG4AAAAAAAAAAAAuwBsAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T08:53:23.596Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LogAnalysis.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\ft7\\Shipping Program\\Shipping\\Services\\LogAnalysis.cs",
+              "RelativeDocumentMoniker": "Shipping\\Services\\LogAnalysis.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\ft7\\Shipping Program\\Shipping\\Services\\LogAnalysis.cs",
+              "RelativeToolTip": "Shipping\\Services\\LogAnalysis.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAAQwEkAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T06:44:01.486Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Dhcp.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\ft7\\Shipping Program\\Shipping\\Services\\Dhcp.cs",
+              "RelativeDocumentMoniker": "Shipping\\Services\\Dhcp.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\ft7\\Shipping Program\\Shipping\\Services\\Dhcp.cs",
+              "RelativeToolTip": "Shipping\\Services\\Dhcp.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAArwD4AAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T04:03:57.178Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CcdChecker.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\ft7\\Shipping Program\\Shipping\\Services\\CcdChecker.cs",
+              "RelativeDocumentMoniker": "Shipping\\Services\\CcdChecker.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\ft7\\Shipping Program\\Shipping\\Services\\CcdChecker.cs",
+              "RelativeToolTip": "Shipping\\Services\\CcdChecker.cs",
+              "ViewState": "AgIAAGAAAAAAAAAAAAArwGsAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-08T09:13:10.409Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\ft7\\Shipping Program\\Shipping\\Form1.cs",
+              "RelativeDocumentMoniker": "Shipping\\Form1.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\ft7\\Shipping Program\\Shipping\\Form1.cs",
+              "RelativeToolTip": "Shipping\\Form1.cs",
+              "ViewState": "AgIAACcEAAAAAAAAAAAhwEQEAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-05T02:00:33.635Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

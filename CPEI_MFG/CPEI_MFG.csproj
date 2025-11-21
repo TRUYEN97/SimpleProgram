@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{46AA41EE-E9C8-4FAF-AA83-B8C14B131D32}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CPEI_MFG</RootNamespace>
+    <AssemblyName>CPEI_MFG</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>http://localhost/CPEI_MFG/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ApkIcon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>Custom</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>..\packages\BouncyCastle.Cryptography.2.6.2\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=8.0.0.2, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.8.0.2\lib\net462\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=8.0.0.3, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.8.0.3\lib\net462\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="NationalInstruments.Common, Version=8.7.35.133, Culture=neutral, PublicKeyToken=18cbae0f9955702a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\NationalInstruments.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Renci.SshNet, Version=2025.1.0.1, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
+      <HintPath>..\packages\SSH.NET.2025.1.0\lib\net462\Renci.SshNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Formats.Asn1, Version=8.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Formats.Asn1.8.0.2\lib\net462\System.Formats.Asn1.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\Util.cs" />
+    <Compile Include="communicate\BaseCommunicate.cs" />
+    <Compile Include="communicate\BaseCommunicateRunner.cs" />
+    <Compile Include="communicate\BaseInOutStream.cs" />
+    <Compile Include="communicate\BaseProcess.cs" />
+    <Compile Include="communicate\Implement\AppProcess\MyProcess.cs" />
+    <Compile Include="communicate\Implement\Cmd\CmdProcess.cs" />
+    <Compile Include="communicate\Implement\Cmd\PingProcess.cs" />
+    <Compile Include="communicate\Implement\Serial\MySerialPort.cs" />
+    <Compile Include="communicate\Implement\SocketSv\Client\ClientSocket.cs" />
+    <Compile Include="communicate\Implement\SocketSv\Server\ISocketManagement.cs" />
+    <Compile Include="communicate\Implement\SocketSv\Server\ServerSocket.cs" />
+    <Compile Include="communicate\InOutStream\DynamicTextReader.cs" />
+    <Compile Include="communicate\InOutStream\StringStreamReader.cs" />
+    <Compile Include="communicate\InOutStream\StringWriter.cs" />
+    <Compile Include="communicate\Interface\IConnectable.cs" />
+    <Compile Include="communicate\Interface\IReceiver.cs" />
+    <Compile Include="communicate\Interface\IWriter.cs" />
+    <Compile Include="communicate\MySftp.cs" />
+    <Compile Include="Config\SerialControl\CCD\CcdConfig.cs" />
+    <Compile Include="Config\ConfigLoader.cs" />
+    <Compile Include="Config\Dhcp\DhcpConfig.cs" />
+    <Compile Include="Config\Dhcp\StaticIpConfig.cs" />
+    <Compile Include="Config\Errorcode\ErrorCodeConfig.cs" />
+    <Compile Include="Config\FTU\CheckLogConfig.cs" />
+    <Compile Include="Config\FTU\FtuConfig.cs" />
+    <Compile Include="Config\FTU\FtuDataConfig.cs" />
+    <Compile Include="Config\Golden\GoldenConfig.cs" />
+    <Compile Include="Config\AbsApproxCommand.cs" />
+    <Compile Include="Config\LoggerConfig.cs" />
+    <Compile Include="Config\SerialControl\ISerialCommand.cs" />
+    <Compile Include="Config\SerialControl\SerialCommand.cs" />
+    <Compile Include="Config\SerialControl\SerialControlCommand.cs" />
+    <Compile Include="Config\SerialControl\SerialControlConfig.cs" />
+    <Compile Include="Config\Sfis\SfisConfig.cs" />
+    <Compile Include="Config\TestCondition\TestConditionConfig.cs" />
+    <Compile Include="Config\VersionConfig.cs" />
+    <Compile Include="View\DhcpControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\DhcpControl.Designer.cs">
+      <DependentUpon>DhcpControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Services\ErrorCode\ErrorCodeAnalysis.cs" />
+    <Compile Include="Services\ErrorCode\ErrorCodeMapper.cs" />
+    <Compile Include="Services\ErrorCode\ErrorCodeMapperConfig.cs" />
+    <Compile Include="Services\ErrorCode\ErrorCodeModel.cs" />
+    <Compile Include="Services\ErrorCode\SpecialErrorCode.cs" />
+    <Compile Include="View\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MessageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MessageForm.Designer.cs">
+      <DependentUpon>MessageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\IniFile.cs" />
+    <Compile Include="Config\ProgramConfig.cs" />
+    <Compile Include="Config\SerialControl\CCD\CcdCommandModel.cs" />
+    <Compile Include="Config\Errorcode\ErrorcodeModelConfig.cs" />
+    <Compile Include="Config\QuestionType.cs" />
+    <Compile Include="Model\ResultModel.cs" />
+    <Compile Include="Model\TestModel.cs" />
+    <Compile Include="Config\Worker\WorkerCheckerCommand.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\BaseInApprox.cs" />
+    <Compile Include="Services\BaseService.cs" />
+    <Compile Include="Services\SerialControl\BaseSerialControl.cs" />
+    <Compile Include="Services\SerialControl\CCD\CcdChecker.cs" />
+    <Compile Include="Services\ErrorCode\ErrorcodeChecker.cs" />
+    <Compile Include="Services\DHCP\Dhcp.cs" />
+    <Compile Include="Services\IService.cs" />
+    <Compile Include="Services\FTU\FtuService.cs" />
+    <Compile Include="Services\LogAnalysis.cs" />
+    <Compile Include="Services\SerialControl\SerialControlService.cs" />
+    <Compile Include="Services\Sfis.cs" />
+    <Compile Include="Services\Worker\WorkerChecker.cs" />
+    <Compile Include="Config\Worker\WorkerCheckerConfig.cs" />
+    <Compile Include="Services\Condition\CheckConditionFactory.cs" />
+    <Compile Include="Services\Condition\CheckTestFailedCondition.cs" />
+    <Compile Include="Services\DHCP\DhcpMessage.cs" />
+    <Compile Include="Services\DHCP\DhcpServer.cs" />
+    <Compile Include="Services\DHCP\IpManagement.cs" />
+    <Compile Include="Services\DHCP\IpPool.cs" />
+    <Compile Include="Services\DHCP\LeaseModel.cs" />
+    <Compile Include="Services\DHCP\StaticIpManagement.cs" />
+    <Compile Include="Common\FileUtil.cs" />
+    <Compile Include="Services\Condition\GoldenVerify.cs" />
+    <Compile Include="Common\RegistryUtil.cs" />
+    <Compile Include="Config\SftpConfig.cs" />
+    <Compile Include="timer\Interfcae\IStopwatch.cs" />
+    <Compile Include="timer\Stopwatch.cs" />
+    <Compile Include="Common\WindowControl.cs" />
+    <EmbeddedResource Include="View\DhcpControl.resx">
+      <DependentUpon>DhcpControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MessageForm.resx">
+      <DependentUpon>MessageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ApkIcon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

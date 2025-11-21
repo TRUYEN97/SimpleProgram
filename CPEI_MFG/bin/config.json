@@ -1,0 +1,165 @@
+{
+  "Model": "",
+  "Station": "",
+  "IsDebugModeEnable": false,
+  "LocalLog": "D:\\UBNT_Test_Logs",
+  "LocalLogGolden": "D:\\UBNT_Golden_Test_Logs",
+  "LocalLogNoSFC": "D:\\UBNT_Test_Logs_NoSFC",
+  "InputMaxLength": 19,
+  "MacIndex": 0,
+  "DUT_IP": "192.168.1.20",
+  "LoggerConfig": {
+    "Host": "192.168.240.52",
+    "Port": 4422,
+    "User": "user",
+    "Password": "ubnt"
+  },
+  "VersionConfig": {
+    "FWVer": "",
+    "FCDVer": "",
+    "FTUVer": "",
+    "BOMVer": "",
+    "RegionVer": ""
+  },
+  "SfisConfig": {
+    "Com": "COM8",
+    "Baudrate": 9600
+  },
+  "DhcpConfig": {
+    "IsEnable": false,
+    "ServerIp": "192.168.1.254",
+    "StartIp": "192.168.1.20",
+    "EndIp": "192.168.1.20",
+    "SubnetMask": "255.255.255.0",
+    "LeaseSeconds": 30,
+    "StaticIps": [
+      {
+        "Ip": "",
+        "Mac": ""
+      }
+    ]
+  },
+  "CcdConfig": {
+    "IsEnable": false,
+    "Com": "COM10",
+    "Baudrate": 9600,
+    "Commands": [
+      {
+        "WindowTitle": "Work fine?",
+        "Command": "LCMR",
+        "Target": "LCMROK",
+        "TimeOutMs": 20000,
+        "ResponseTimeMs": 5000,
+        "Errorcode": "",
+        "TextTrigget": "",
+        "Keywork": "",
+        "InApprox": 1
+      }
+    ]
+  },
+  "FtuConfig": {
+    "DirPath": "",
+    "CustomConfigFileName": "",
+    "FTUParam": "",
+    "FtuDataConfigs": [
+      {
+        "Sector": "",
+        "Key": "",
+        "TargetValue": "",
+        "ErrorMessage": ""
+      }
+    ],
+    "CheckLogConfigs": [
+      {
+        "Keywork": "",
+        "ErrorCode": ""
+      }
+    ]
+  },
+  "GoldenConfig": {
+    "IsGoodGdEnable": false,
+    "GoodGoldens": [],
+    "IsBadGdEnable": false,
+    "BadGoldens": [],
+    "Time": 12.0
+  },
+  "TestCondition": {
+    "IsEnableContinueFail": false,
+    "IsEnableOldMacFail": false,
+    "MaxContinueFailSpec": 3
+  },
+  "ErrorCodeConfig": {
+    "SftpConfig": {
+      "Host": "192.168.240.67",
+      "Port": 4422,
+      "User": "cft",
+      "Password": "admin"
+    },
+    "MaxLength": 6,
+    "LocalFilePath": "../Errorcodes.csv",
+    "LocalNewFilePath": "../NewErrorcodes.csv",
+    "Configs": [
+      {
+        "ErrorCode": "",
+        "TextTrigget": "",
+        "Keywork": "",
+        "InApprox": 1
+      }
+    ]
+  },
+  "WorkerChecker": {
+    "IsEnable": false,
+    "Commands": [
+      {
+        "Title": "",
+        "Message": "",
+        "ImagePath": "",
+        "Type": 3,
+        "DelaySeconds": 0,
+        "TextTrigget": "",
+        "Keywork": "",
+        "InApprox": 1
+      }
+    ]
+  },
+  "SerialControl": {
+    "IsEnable": false,
+    "Com": "COM3",
+    "Baudrate": 9600,
+    "StartTestCommands": [
+      {
+        "Command": "",
+        "Target": "",
+        "ResponseTimeMs": 0,
+        "TimeOutMs": 0,
+        "Errorcode": ""
+      }
+    ],
+    "EndTestCommands": [
+      {
+        "Command": "",
+        "Target": "",
+        "ResponseTimeMs": 0,
+        "TimeOutMs": 0,
+        "Errorcode": ""
+      }
+    ],
+    "Commands": [
+      {
+        "Commands": [
+          {
+            "Command": "",
+            "Target": "",
+            "ResponseTimeMs": 0,
+            "TimeOutMs": 0,
+            "Errorcode": ""
+          }
+        ],
+        "TextTrigget": "",
+        "Keywork": "",
+        "InApprox": 1
+      }
+    ],
+    "Name": "Fixture"
+  }
+}

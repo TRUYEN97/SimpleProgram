@@ -1,0 +1,139 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\2.C#\\MidleWare\\Simple Program\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{46AA41EE-E9C8-4FAF-AA83-B8C14B131D32}|CPEI_MFG\\CPEI_MFG.csproj|D:\\2.C#\\MidleWare\\Simple Program\\cpei_mfg\\view\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{46AA41EE-E9C8-4FAF-AA83-B8C14B131D32}|CPEI_MFG\\CPEI_MFG.csproj|solutionrelative:cpei_mfg\\view\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46AA41EE-E9C8-4FAF-AA83-B8C14B131D32}|CPEI_MFG\\CPEI_MFG.csproj|D:\\2.C#\\MidleWare\\Simple Program\\cpei_mfg\\view\\dhcpcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{46AA41EE-E9C8-4FAF-AA83-B8C14B131D32}|CPEI_MFG\\CPEI_MFG.csproj|solutionrelative:cpei_mfg\\view\\dhcpcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46AA41EE-E9C8-4FAF-AA83-B8C14B131D32}|CPEI_MFG\\CPEI_MFG.csproj|d:\\2.c#\\midleware\\simple program\\cpei_mfg\\services\\dhcp\\dhcp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46AA41EE-E9C8-4FAF-AA83-B8C14B131D32}|CPEI_MFG\\CPEI_MFG.csproj|solutionrelative:cpei_mfg\\services\\dhcp\\dhcp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46AA41EE-E9C8-4FAF-AA83-B8C14B131D32}|CPEI_MFG\\CPEI_MFG.csproj|D:\\2.C#\\MidleWare\\Simple Program\\cpei_mfg\\view\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46AA41EE-E9C8-4FAF-AA83-B8C14B131D32}|CPEI_MFG\\CPEI_MFG.csproj|solutionrelative:cpei_mfg\\view\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46AA41EE-E9C8-4FAF-AA83-B8C14B131D32}|CPEI_MFG\\CPEI_MFG.csproj|D:\\2.C#\\MidleWare\\Simple Program\\cpei_mfg\\view\\dhcpcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46AA41EE-E9C8-4FAF-AA83-B8C14B131D32}|CPEI_MFG\\CPEI_MFG.csproj|solutionrelative:cpei_mfg\\view\\dhcpcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46AA41EE-E9C8-4FAF-AA83-B8C14B131D32}|CPEI_MFG\\CPEI_MFG.csproj|D:\\2.C#\\MidleWare\\Simple Program\\cpei_mfg\\services\\dhcp\\ippool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46AA41EE-E9C8-4FAF-AA83-B8C14B131D32}|CPEI_MFG\\CPEI_MFG.csproj|solutionrelative:cpei_mfg\\services\\dhcp\\ippool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46AA41EE-E9C8-4FAF-AA83-B8C14B131D32}|CPEI_MFG\\CPEI_MFG.csproj|D:\\2.C#\\MidleWare\\Simple Program\\cpei_mfg\\services\\dhcp\\dhcpserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46AA41EE-E9C8-4FAF-AA83-B8C14B131D32}|CPEI_MFG\\CPEI_MFG.csproj|solutionrelative:cpei_mfg\\services\\dhcp\\dhcpserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "D:\\2.C#\\MidleWare\\Simple Program\\CPEI_MFG\\View\\Form1.cs",
+              "RelativeDocumentMoniker": "CPEI_MFG\\View\\Form1.cs",
+              "ToolTip": "D:\\2.C#\\MidleWare\\Simple Program\\CPEI_MFG\\View\\Form1.cs",
+              "RelativeToolTip": "CPEI_MFG\\View\\Form1.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAIAywC0AAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T11:58:10.971Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DhcpControl.cs",
+              "DocumentMoniker": "D:\\2.C#\\MidleWare\\Simple Program\\CPEI_MFG\\View\\DhcpControl.cs",
+              "RelativeDocumentMoniker": "CPEI_MFG\\View\\DhcpControl.cs",
+              "ToolTip": "D:\\2.C#\\MidleWare\\Simple Program\\CPEI_MFG\\View\\DhcpControl.cs",
+              "RelativeToolTip": "CPEI_MFG\\View\\DhcpControl.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABwAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T11:56:51.518Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DhcpControl.cs [Design]",
+              "DocumentMoniker": "D:\\2.C#\\MidleWare\\Simple Program\\CPEI_MFG\\View\\DhcpControl.cs",
+              "RelativeDocumentMoniker": "CPEI_MFG\\View\\DhcpControl.cs",
+              "ToolTip": "D:\\2.C#\\MidleWare\\Simple Program\\CPEI_MFG\\View\\DhcpControl.cs [Design]",
+              "RelativeToolTip": "CPEI_MFG\\View\\DhcpControl.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T11:56:47.04Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "D:\\2.C#\\MidleWare\\Simple Program\\CPEI_MFG\\View\\Form1.cs",
+              "RelativeDocumentMoniker": "CPEI_MFG\\View\\Form1.cs",
+              "ToolTip": "D:\\2.C#\\MidleWare\\Simple Program\\CPEI_MFG\\View\\Form1.cs [Design]",
+              "RelativeToolTip": "CPEI_MFG\\View\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T11:56:39.085Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IpPool.cs",
+              "DocumentMoniker": "D:\\2.C#\\MidleWare\\Simple Program\\CPEI_MFG\\Services\\DHCP\\IpPool.cs",
+              "RelativeDocumentMoniker": "CPEI_MFG\\Services\\DHCP\\IpPool.cs",
+              "ToolTip": "D:\\2.C#\\MidleWare\\Simple Program\\CPEI_MFG\\Services\\DHCP\\IpPool.cs",
+              "RelativeToolTip": "CPEI_MFG\\Services\\DHCP\\IpPool.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAArwHgAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T11:42:12.489Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DhcpServer.cs",
+              "DocumentMoniker": "D:\\2.C#\\MidleWare\\Simple Program\\CPEI_MFG\\Services\\DHCP\\DhcpServer.cs",
+              "RelativeDocumentMoniker": "CPEI_MFG\\Services\\DHCP\\DhcpServer.cs",
+              "ToolTip": "D:\\2.C#\\MidleWare\\Simple Program\\CPEI_MFG\\Services\\DHCP\\DhcpServer.cs",
+              "RelativeToolTip": "CPEI_MFG\\Services\\DHCP\\DhcpServer.cs",
+              "ViewState": "AgIAAHwAAAAAAAAAAAAWwJIAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T10:46:20.778Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Dhcp.cs",
+              "DocumentMoniker": "D:\\2.C#\\MidleWare\\Simple Program\\CPEI_MFG\\Services\\DHCP\\Dhcp.cs",
+              "RelativeDocumentMoniker": "CPEI_MFG\\Services\\DHCP\\Dhcp.cs",
+              "ToolTip": "D:\\2.C#\\MidleWare\\Simple Program\\CPEI_MFG\\Services\\DHCP\\Dhcp.cs",
+              "RelativeToolTip": "CPEI_MFG\\Services\\DHCP\\Dhcp.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAjwDwAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T10:23:29.99Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
