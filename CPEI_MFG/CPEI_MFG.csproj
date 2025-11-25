@@ -169,7 +169,6 @@
     <Compile Include="Services\ErrorCode\ErrorCodeMapper.cs" />
     <Compile Include="Services\ErrorCode\ErrorCodeMapperConfig.cs" />
     <Compile Include="Services\ErrorCode\ErrorCodeModel.cs" />
-    <Compile Include="Services\ErrorCode\SpecialErrorCode.cs" />
     <Compile Include="View\Form1.cs">
       <SubType>Form</SubType>
     </Compile>

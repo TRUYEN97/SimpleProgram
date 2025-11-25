@@ -12,15 +12,13 @@ namespace CPEI_MFG.Services.ErrorCode
     {
         private readonly static Lazy<ErrorCodeMapper> instance = new Lazy<ErrorCodeMapper>(() => new ErrorCodeMapper());
         private readonly ErrorCodeModel model;
-        private readonly SpecialErrorCode specialError;
         private readonly ErrorCodeAnalysis errorCodeAnalysis;
         private ErrorCodeMapperConfig _config;
         private ErrorCodeMapper()
         {
             _config = new ErrorCodeMapperConfig();
             model = new ErrorCodeModel() { MaxLength = _config.ErrorCodeMaxLength };
-            specialError = new SpecialErrorCode() { MaxLength = _config.ErrorCodeMaxLength };
-            errorCodeAnalysis = new ErrorCodeAnalysis(model, specialError) { MaxLength = _config.ErrorCodeMaxLength };
+            errorCodeAnalysis = new ErrorCodeAnalysis(model) { MaxLength = _config.ErrorCodeMaxLength };
         }
         public static ErrorCodeMapper Instance => instance.Value;
         public ErrorCodeMapperConfig Config { get => _config; set => _config = value; }
@@ -28,7 +26,6 @@ namespace CPEI_MFG.Services.ErrorCode
         public string RemoteDir { get => _config.RemoteDir; set => _config.RemoteDir = value; }
         public string Product { get => _config.Product; set => _config.Product = value; }
         public string Station { get => _config.Station; set => _config.Station = value; }
-        public SpecialErrorCode SpecialErrorCode => specialError;
         public string RemoteNewFilePath => Path.Combine(RemoteDir, Product, Station, "newErrorCodes.csv");
         public string RemoteFilePath => Path.Combine(RemoteDir, "ErrorCodes.csv");
 
@@ -38,23 +35,17 @@ namespace CPEI_MFG.Services.ErrorCode
             {
                 return false;
             }
-            using (var sftp = new MySftp(_config.SftpConfig))
+            var sftp = new MySftp(_config.SftpConfig);
+            if (!sftp.TryReadAllLines(RemoteFilePath, out string[] lines))
             {
-                if (!sftp.IsConnected)
-                {
-                    return false;
-                }
-                if (!sftp.TryReadAllLines(RemoteFilePath, out string[] lines))
-                {
-                    return false;
-                }
-                if (AddErrorCode(lines))
-                {
-                    CopyToLocal();
-                    return true;
-                }
                 return false;
             }
+            if (AddErrorCode(lines))
+            {
+                CopyToLocal();
+                return true;
+            }
+            return false;
         }
 
         public bool LoadErrorcodeFromFile()
@@ -141,13 +132,8 @@ namespace CPEI_MFG.Services.ErrorCode
 
         private void UpdateToSftpFile(string line)
         {
-            using (var sftp = new MySftp(Instance._config.SftpConfig))
-            {
-                if (sftp.Connect())
-                {
-                    sftp.AppendLine(RemoteNewFilePath, line);
-                }
-            }
+            var sftp = new MySftp(Instance._config.SftpConfig);
+            sftp.AppendLine(RemoteNewFilePath, line);
         }
 
         private void UpdateToLocalFile(string line)

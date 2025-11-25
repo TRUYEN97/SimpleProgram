@@ -12,13 +12,11 @@ namespace CPEI_MFG.Services.ErrorCode
         private const string KEYWORD = "===Test report================";
 
         private readonly ErrorCodeModel _errorCodeModel;
-        private readonly SpecialErrorCode _specialErrorCode;
         public int MaxLength { get; set; }
 
-        public ErrorCodeAnalysis(ErrorCodeModel errorCodeModel, SpecialErrorCode specialErrorCode)
+        public ErrorCodeAnalysis(ErrorCodeModel errorCodeModel)
         {
             _errorCodeModel = errorCodeModel;
-            _specialErrorCode = specialErrorCode;
             MaxLength = Int16.MaxValue;
         }
 
@@ -26,21 +24,11 @@ namespace CPEI_MFG.Services.ErrorCode
         {
             funcName = string.Empty;
             errorcode = string.Empty;
-
             if (string.IsNullOrWhiteSpace(logText))
                 return false;
             string failCode = GetCode(logText);
             funcName = GetFunctionName(logText, failCode);
-            if (!_errorCodeModel.TryGet(funcName, out string baseErrorcode))
-            {
-                baseErrorcode = string.Empty;
-            }
-            if (_specialErrorCode.IsSpecial(funcName, logText, baseErrorcode, out errorcode) && !string.IsNullOrWhiteSpace(errorcode))
-            {
-                return true;
-            }
-            errorcode = baseErrorcode;
-            return !string.IsNullOrWhiteSpace(errorcode);
+            return _errorCodeModel.TryGet(funcName, out errorcode) && !string.IsNullOrWhiteSpace(errorcode);
         }
 
         public string CreateNewErrorcode(string functionName)

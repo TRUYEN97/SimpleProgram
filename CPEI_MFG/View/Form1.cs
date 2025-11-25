@@ -73,7 +73,7 @@ namespace CPEI_MFG.View
         {
             try
             {
-                testModel.AppVer = "V2025.11.19";
+                testModel.AppVer = "V2025.11.24";
                 IPHostEntry host;
                 host = Dns.GetHostEntry(Dns.GetHostName());
                 for (int i = 0; i < host.AddressList.Count(); i++)
@@ -702,21 +702,15 @@ namespace CPEI_MFG.View
             string localFilePath = Path.Combine(logDir, fileName);
             File.Copy(file, localFilePath);
             var sftpConfig = ProgramConfig.LoggerConfig;
-            using (MySftp sftp = new MySftp(sftpConfig.Host, sftpConfig.Port, sftpConfig.User, sftpConfig.Password))
+            MySftp sftp = new MySftp(sftpConfig.Host, sftpConfig.Port, sftpConfig.User, sftpConfig.Password);
+            string sftpFilePath = Path.Combine(ServerlogDir, fileName);
+            while (!sftp.UploadFile(sftpFilePath, localFilePath))
             {
-                string sftpFilePath = Path.Combine(ServerlogDir, fileName);
-                if (!sftp.UploadFile(sftpFilePath, localFilePath))
-                {
-                    WriteDebugLog($"Save the log to server: '{sftpFilePath}' failed!");
-                    WriteDebugLog($"Save the log to server failed, Please check the connnection to the server!\r\nIP:'{sftpConfig.Host}'");
-                    return false;
-                }
-                else
-                {
-                    WriteDebugLog($"Save the log to server: '{sftpFilePath}'");
-                    return true;
-                }
+                WriteDebugLog($"Save the log to server: '{sftpFilePath}' failed!");
+                WriteDebugLog($"Save the log to server failed, Please check the connnection to the server!\r\nIP:'{sftpConfig.Host}'");
             }
+            WriteDebugLog($"Save the log to server: '{sftpFilePath}' ok");
+            return true;
         }
         private void DeleteOldLogs()
         {

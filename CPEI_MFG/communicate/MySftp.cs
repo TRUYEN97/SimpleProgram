@@ -1,473 +1,238 @@
-﻿using System;
+﻿using CPEI_MFG.Config;
+using Renci.SshNet;
+using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Threading.Tasks;
-using Renci.SshNet.Sftp;
-using Renci.SshNet;
-using CPEI_MFG.Service;
-using CPEI_MFG.Config;
 
 namespace CPEI_MFG.Communicate
 {
-    public class MySftp : IDisposable
+    public class MySftp
     {
-        private readonly SftpClient _client;
+        private readonly string _host;
+        private readonly int _port;
+        private readonly string _user;
+        private readonly string _password;
+
         public MySftp(string host, int port, string user, string password)
         {
-            _client = new SftpClient(host, port, user, password);
-            try
-            {
-                _client.Connect();
-            }
-            catch (Exception)
-            {
-            }
+            _host = host;
+            _port = port;
+            _user = user;
+            _password = password;
         }
 
         public MySftp(SftpConfig sftpConfig) : this(sftpConfig.Host, sftpConfig.Port, sftpConfig.User, sftpConfig.Password) { }
-
-        public bool Connect()
+        private T UseClient<T>(Func<SftpClient, T> action)
         {
-            try
+            using (var client = new SftpClient(_host, _port, _user, _password))
             {
-                if (_client.IsConnected)
-                {
-                    return true;
-                }
-                else
-                {
-                    _client.Connect();
-                    return true;
-                }
-            }
-            catch (Exception)
-            {
-                return false;
+                client.KeepAliveInterval = TimeSpan.FromSeconds(10);
+                client.Connect();
+
+                T result = action(client);
+
+                client.Disconnect();
+                return result;
             }
         }
 
-
-        public bool IsConnected { get { return _client.IsConnected; } }
-
-        public string ReadAllText(string remotePath)
+        private void UseClient(Action<SftpClient> action)
         {
-            try
+            using (var client = new SftpClient(_host, _port, _user, _password))
             {
-                if (!Connect())
-                {
-                    return null;
-                }
-                if (!_client.Exists(remotePath))
-                {
-                    return null;
-                }
-                return _client.ReadAllText(remotePath);
-            }
-            catch (Exception)
-            {
-                return null;
-            }
+                client.KeepAliveInterval = TimeSpan.FromSeconds(10);
+                client.Connect();
 
-        }
-        public string[] ReadAllLines(string remotePath)
-        {
-            try
-            {
-                if (!Connect())
-                {
-                    return null;
-                }
+                action(client);
 
-                if (!_client.Exists(remotePath))
-                {
-                    return null;
-                }
-                return _client.ReadAllLines(remotePath);
-            }
-            catch (Exception)
-            {
-                return null;
+                client.Disconnect();
             }
         }
 
-
-        public bool AppendAllText(string remotePath, string contents)
-        {
-            try
-            {
-                if (!Connect())
-                {
-                    return false;
-                }
-                if (!CreateDirectory(Path.GetDirectoryName(remotePath)))
-                {
-                    return false;
-                }
-                _client.AppendAllText(remotePath, contents);
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-        }
-
-        public bool AppendLine(string remotePath, string contents)
-        {
-            try
-            {
-                if (!Connect())
-                {
-                    return false;
-                }
-                if (!CreateDirectory(Path.GetDirectoryName(remotePath)))
-                {
-                    return false;
-                }
-                _client.AppendAllText(remotePath, $"{contents}\r\n");
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-        }
-
-        public bool WriteAllText(string remotePath, string contents)
-        {
-            try
-            {
-                if (!Connect())
-                {
-                    return false;
-                }
-                if (!CreateDirectory(Path.GetDirectoryName(remotePath)))
-                {
-                    return false;
-                }
-                _client.WriteAllText(remotePath, contents);
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-
-        }
-        public bool DownloadFile(string remotePath, string localPath)
-        {
-            int maxRetries = 3;
-            for (int attempt = 1; attempt <= maxRetries; attempt++)
-            {
-                try
-                {
-                    if (!Connect())
-                    {
-                        return false;
-                    }
-                    if (!_client.Exists(remotePath))
-                    {
-                        return false;
-                    }
-                    string dir = Path.GetDirectoryName(localPath);
-                    Directory.CreateDirectory(dir);
-                    Task.Run(() =>
-                   {
-                       using (var fileStream = new FileStream(localPath, FileMode.Create))
-                       {
-                           _client.DownloadFile(remotePath, fileStream);
-                       }
-                   });
-                    return true;
-                }
-                catch (Exception)
-                {
-                    if (attempt == maxRetries)
-                        return false;
-                    Task.Delay(10);
-                }
-            }
-            return false;
-        }
-
-        public List<string> DownloadFolder(string remotePath, string localPath, bool isDowndloadAll = false)
-        {
-            try
-            {
-                if (!Connect())
-                {
-                    return null;
-                }
-                var fileNames = new List<string>();
-                if (_client.Exists(remotePath))
-                {
-                    foreach (var file in _client.ListDirectory(remotePath))
-                    {
-                        if (isDowndloadAll && file.IsDirectory && !file.Name.StartsWith("."))
-                        {
-                            string subFolder = string.Format("{0}/{1}", localPath, file.Name);
-                            fileNames.AddRange(DownloadFolder(file.FullName, subFolder, isDowndloadAll));
-                        }
-                        else if (!file.IsDirectory)
-                        {
-                            string subPath = file.FullName.Substring(remotePath.Length);
-                            string filePath = string.Format("{0}{1}", localPath, subPath);
-                            Directory.CreateDirectory(localPath);
-                            Task.Run(() =>
-                           {
-                               using (var fileStreem = new FileStream(filePath, FileMode.Create))
-                               {
-                                   _client.DownloadFile(file.FullName, fileStreem);
-                                   fileNames.Add(filePath);
-                               }
-                           });
-                        }
-                    }
-                }
-                return fileNames;
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-
-        }
-
-        public bool UploadFile(string remotePath, string localPath)
-        {
-            int maxRetries = 3;
-            if (!File.Exists(localPath))
-            {
-                return false;
-            }
-            for (int attempt = 1; attempt <= maxRetries; attempt++)
-            {
-                try
-                {
-                    if (!Connect())
-                    {
-                        return false;
-                    }
-                    if (!CreateDirectory(Path.GetDirectoryName(remotePath)))
-                    {
-                        return false;
-                    }
-                    using (var fileStreem = new FileStream(localPath, FileMode.Open))
-                    {
-                        _client.UploadFile(fileStreem, remotePath);
-                    }
-                    return true;
-                }
-                catch (Exception)
-                {
-                    Task.Delay(10);
-                }
-            }
-            return false;
-
-        }
-        public bool DeleteFile(string remotePath)
-        {
-            try
-            {
-                if (!Connect())
-                {
-                    return false;
-                }
-                if (_client.Exists(remotePath))
-                {
-                    _client.DeleteFile(remotePath);
-                }
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-        }
-        public bool CreateDirectory(string remotePath)
-        {
-            try
-            {
-                string[] parts = remotePath.Split(new[] { '/', '\\' }, StringSplitOptions.RemoveEmptyEntries);
-                string currentPath = "";
-
-                if (remotePath.StartsWith("/"))
-                {
-                    currentPath = "/";
-                }
-                else if (remotePath.StartsWith("\\"))
-                {
-                    currentPath = "\\";
-                }
-                if (!Connect())
-                {
-                    return false;
-                }
-                foreach (var part in parts)
-                {
-                    currentPath = Path.Combine(currentPath, part).Replace('\\', '/');
-
-                    if (!_client.Exists(currentPath))
-                    {
-                        _client.CreateDirectory(currentPath);
-                    }
-                }
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-        }
-        public List<string> ListDirectoryPath(string remotePath)
-        {
-            try
-            {
-                if (!Connect())
-                {
-                    return null;
-                }
-                List<string> listName = new List<string>();
-                if (!_client.Exists(remotePath))
-                {
-                    return null;
-                }
-                foreach (var file in _client.ListDirectory(remotePath))
-                {
-                    if (file.IsDirectory && file.Name != "." && file.Name != "..")
-                    {
-                        listName.Add(file.FullName);
-                    }
-                }
-                return listName;
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
-        public List<string> ListDirectoryName(string remotePath)
-        {
-            try
-            {
-                if (!Connect())
-                {
-                    return null;
-                }
-                List<string> listName = new List<string>();
-                if (!_client.Exists(remotePath))
-                {
-                    return null;
-                }
-                foreach (var file in _client.ListDirectory(remotePath))
-                {
-                    if (file.IsDirectory && file.Name != "." && file.Name != "..")
-                    {
-                        listName.Add(file.Name);
-                    }
-                }
-                return listName;
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
-        public List<string> ListFilePath(string remotePath, bool getAll)
-        {
-            try
-            {
-                if (!Connect())
-                {
-                    return null;
-                }
-                List<string> listName = new List<string>();
-                if (!_client.Exists(remotePath))
-                {
-                    return null;
-                }
-                foreach (var file in _client.ListDirectory(remotePath))
-                {
-                    if (file.IsDirectory && getAll)
-                    {
-                        var temp = ListFilePath(remotePath, getAll);
-                        if (temp != null)
-                        {
-                            listName.AddRange(temp);
-                        }
-                    }
-                    else if (file.Name != "." && file.Name != "..")
-                    {
-                        listName.Add(file.FullName);
-                    }
-                }
-                return listName;
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
-
-        public bool DeleteFolder(string remotePath, bool deleteIfEmpty = false)
-        {
-
-            if (!Connect())
-            {
-                return false;
-            }
-            try
-            {
-                if (_client.Exists(remotePath))
-                {
-                    List<ISftpFile> list = new List<ISftpFile>(_client.ListDirectory(remotePath));
-                    if (list.Count > 0 && !deleteIfEmpty)
-                    {
-                        foreach (var file in list)
-                        {
-                            if (!file.Name.StartsWith("."))
-                            {
-                                if (file.IsDirectory)
-                                {
-                                    DeleteFolder(file.FullName);
-                                }
-                                else
-                                {
-                                    _client.DeleteFile(file.FullName);
-                                }
-                            }
-                        }
-                    }
-                    _client.DeleteDirectory(remotePath);
-                }
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-        }
-
-
-        public void Dispose()
-        {
-            _client?.Dispose();
-        }
+        // ------------------------
+        // ---- FILE OPERATIONS ---
+        // ------------------------
 
         public bool Exists(string remotePath)
         {
-            if (!Connect())
+            return UseClient(client => client.Exists(remotePath));
+        }
+
+        public string ReadAllText(string remotePath)
+        {
+            return UseClient(client =>
             {
-                return false;
-            }
-            return _client.Exists(remotePath);
+                if (!client.Exists(remotePath))
+                    return null;
+
+                return client.ReadAllText(remotePath);
+            });
         }
 
         public bool TryReadAllLines(string remoteFilePath, out string[] lines)
         {
             lines = ReadAllLines(remoteFilePath);
-            return lines != null;
+            return lines?.Length > 0;
+        }
+
+        public string[] ReadAllLines(string remotePath)
+        {
+            return UseClient(client =>
+            {
+                if (!client.Exists(remotePath))
+                    return null;
+
+                return client.ReadAllLines(remotePath);
+            });
+        }
+
+        public bool WriteAllText(string remotePath, string content)
+        {
+            return UseClient(client =>
+            {
+                CreateDirectoryInternal(client, Path.GetDirectoryName(remotePath));
+                client.WriteAllText(remotePath, content);
+                return true;
+            });
+        }
+
+        public bool AppendAllText(string remotePath, string content)
+        {
+            return UseClient(client =>
+            {
+                CreateDirectoryInternal(client, Path.GetDirectoryName(remotePath));
+                client.AppendAllText(remotePath, content);
+                return true;
+            });
+        }
+
+        public bool AppendLine(string remotePath, string content)
+        {
+            return AppendAllText(remotePath, content + "\r\n");
+        }
+
+        public bool DeleteFile(string remotePath)
+        {
+            return UseClient(client =>
+            {
+                if (client.Exists(remotePath))
+                    client.DeleteFile(remotePath);
+
+                return true;
+            });
+        }
+
+        // -------------------------
+        // ---- UPLOAD/DOWNLOAD ----
+        // -------------------------
+
+        public bool UploadFile(string remotePath, string localPath)
+        {
+            return UseClient(client =>
+            {
+                if (!File.Exists(localPath))
+                    return false;
+
+                CreateDirectoryInternal(client, Path.GetDirectoryName(remotePath));
+
+                using (var fs = new FileStream(localPath, FileMode.Open))
+                {
+                    client.UploadFile(fs, remotePath, true);
+                }
+
+                return true;
+            });
+        }
+
+        public bool DownloadFile(string remotePath, string localPath)
+        {
+            return UseClient(client =>
+            {
+                if (!client.Exists(remotePath))
+                    return false;
+
+                Directory.CreateDirectory(Path.GetDirectoryName(localPath));
+
+                using (var fs = new FileStream(localPath, FileMode.Create))
+                {
+                    client.DownloadFile(remotePath, fs);
+                }
+
+                return true;
+            });
+        }
+
+        // -------------------------
+        // ---- DIRECTORY  ---------
+        // -------------------------
+
+        private void CreateDirectoryInternal(SftpClient client, string remotePath)
+        {
+            if (string.IsNullOrWhiteSpace(remotePath))
+                return;
+
+            var parts = remotePath.Replace('\\', '/').Split('/');
+
+            string current = string.Empty;
+
+            foreach (var part in parts)
+            {
+                if (string.IsNullOrWhiteSpace(part))
+                    continue;
+
+                current += "/" + part;
+
+                if (!client.Exists(current))
+                    client.CreateDirectory(current);
+            }
+        }
+
+        public bool CreateDirectory(string remotePath)
+        {
+            return UseClient(client =>
+            {
+                CreateDirectoryInternal(client, remotePath);
+                return true;
+            });
+        }
+
+        public List<string> ListDirectory(string remotePath)
+        {
+            return UseClient(client =>
+            {
+                var list = new List<string>();
+
+                foreach (var file in client.ListDirectory(remotePath))
+                {
+                    if (file.Name != "." && file.Name != "..")
+                        list.Add(file.FullName);
+                }
+
+                return list;
+            });
+        }
+
+        public bool DeleteFolder(string remotePath)
+        {
+            return UseClient(client =>
+            {
+                if (!client.Exists(remotePath))
+                    return false;
+
+                foreach (var file in client.ListDirectory(remotePath))
+                {
+                    if (file.Name == "." || file.Name == "..")
+                        continue;
+
+                    if (file.IsDirectory)
+                        DeleteFolder(file.FullName);
+                    else
+                        client.DeleteFile(file.FullName);
+                }
+
+                client.DeleteDirectory(remotePath);
+                return true;
+            });
         }
     }
 }
