@@ -4387,3 +4387,4 @@ D:\2.C#\MidleWare\Simple Program\CPEI_MFG\bin\Debug\System.Threading.Tasks.Exten
 D:\2.C#\MidleWare\Simple Program\CPEI_MFG\bin\Debug\System.ValueTuple.xml
 D:\2.C#\MidleWare\Simple Program\CPEI_MFG\obj\x86\Debug\CPEI_MFG.View.DhcpControl.resources
 D:\2.C#\MidleWare\Simple Program\CPEI_MFG\obj\x86\Debug\CPEI_MFG.View.Form1.resources
+D:\2.C#\MidleWare\Simple Program\CPEI_MFG\obj\x86\Debug\CPEI_MFG.View.InputForm.resources

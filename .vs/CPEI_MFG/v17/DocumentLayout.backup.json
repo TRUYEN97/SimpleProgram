@@ -3,44 +3,32 @@
   "WorkspaceRootPath": "D:\\2.C#\\MidleWare\\Simple Program\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{46AA41EE-E9C8-4FAF-AA83-B8C14B131D32}|CPEI_MFG\\CPEI_MFG.csproj|d:\\2.c#\\midleware\\simple program\\cpei_mfg\\services\\listmac.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46AA41EE-E9C8-4FAF-AA83-B8C14B131D32}|CPEI_MFG\\CPEI_MFG.csproj|solutionrelative:cpei_mfg\\services\\listmac.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{46AA41EE-E9C8-4FAF-AA83-B8C14B131D32}|CPEI_MFG\\CPEI_MFG.csproj|d:\\2.c#\\midleware\\simple program\\cpei_mfg\\view\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{46AA41EE-E9C8-4FAF-AA83-B8C14B131D32}|CPEI_MFG\\CPEI_MFG.csproj|solutionrelative:cpei_mfg\\view\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{46AA41EE-E9C8-4FAF-AA83-B8C14B131D32}|CPEI_MFG\\CPEI_MFG.csproj|D:\\2.C#\\MidleWare\\Simple Program\\cpei_mfg\\services\\errorcode\\errorcodemapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{46AA41EE-E9C8-4FAF-AA83-B8C14B131D32}|CPEI_MFG\\CPEI_MFG.csproj|solutionrelative:cpei_mfg\\services\\errorcode\\errorcodemapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{46AA41EE-E9C8-4FAF-AA83-B8C14B131D32}|CPEI_MFG\\CPEI_MFG.csproj|D:\\2.C#\\MidleWare\\Simple Program\\cpei_mfg\\services\\errorcode\\errorcodeanalysis.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{46AA41EE-E9C8-4FAF-AA83-B8C14B131D32}|CPEI_MFG\\CPEI_MFG.csproj|solutionrelative:cpei_mfg\\services\\errorcode\\errorcodeanalysis.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{46AA41EE-E9C8-4FAF-AA83-B8C14B131D32}|CPEI_MFG\\CPEI_MFG.csproj|D:\\2.C#\\MidleWare\\Simple Program\\cpei_mfg\\view\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{46AA41EE-E9C8-4FAF-AA83-B8C14B131D32}|CPEI_MFG\\CPEI_MFG.csproj|solutionrelative:cpei_mfg\\view\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{46AA41EE-E9C8-4FAF-AA83-B8C14B131D32}|CPEI_MFG\\CPEI_MFG.csproj|D:\\2.C#\\MidleWare\\Simple Program\\cpei_mfg\\communicate\\mysftp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{46AA41EE-E9C8-4FAF-AA83-B8C14B131D32}|CPEI_MFG\\CPEI_MFG.csproj|solutionrelative:cpei_mfg\\communicate\\mysftp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{46AA41EE-E9C8-4FAF-AA83-B8C14B131D32}|CPEI_MFG\\CPEI_MFG.csproj|d:\\2.c#\\midleware\\simple program\\cpei_mfg\\services\\condition\\unitcounter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46AA41EE-E9C8-4FAF-AA83-B8C14B131D32}|CPEI_MFG\\CPEI_MFG.csproj|solutionrelative:cpei_mfg\\services\\condition\\unitcounter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{46AA41EE-E9C8-4FAF-AA83-B8C14B131D32}|CPEI_MFG\\CPEI_MFG.csproj|D:\\2.C#\\MidleWare\\Simple Program\\cpei_mfg\\view\\dhcpcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{46AA41EE-E9C8-4FAF-AA83-B8C14B131D32}|CPEI_MFG\\CPEI_MFG.csproj|solutionrelative:cpei_mfg\\view\\dhcpcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{46AA41EE-E9C8-4FAF-AA83-B8C14B131D32}|CPEI_MFG\\CPEI_MFG.csproj|d:\\2.c#\\midleware\\simple program\\cpei_mfg\\common\\invokeutil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46AA41EE-E9C8-4FAF-AA83-B8C14B131D32}|CPEI_MFG\\CPEI_MFG.csproj|solutionrelative:cpei_mfg\\common\\invokeutil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{46AA41EE-E9C8-4FAF-AA83-B8C14B131D32}|CPEI_MFG\\CPEI_MFG.csproj|D:\\2.C#\\MidleWare\\Simple Program\\cpei_mfg\\services\\dhcp\\dhcp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{46AA41EE-E9C8-4FAF-AA83-B8C14B131D32}|CPEI_MFG\\CPEI_MFG.csproj|solutionrelative:cpei_mfg\\services\\dhcp\\dhcp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{46AA41EE-E9C8-4FAF-AA83-B8C14B131D32}|CPEI_MFG\\CPEI_MFG.csproj|d:\\2.c#\\midleware\\simple program\\cpei_mfg\\model\\testmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46AA41EE-E9C8-4FAF-AA83-B8C14B131D32}|CPEI_MFG\\CPEI_MFG.csproj|solutionrelative:cpei_mfg\\model\\testmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{46AA41EE-E9C8-4FAF-AA83-B8C14B131D32}|CPEI_MFG\\CPEI_MFG.csproj|D:\\2.C#\\MidleWare\\Simple Program\\cpei_mfg\\view\\dhcpcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{46AA41EE-E9C8-4FAF-AA83-B8C14B131D32}|CPEI_MFG\\CPEI_MFG.csproj|solutionrelative:cpei_mfg\\view\\dhcpcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{46AA41EE-E9C8-4FAF-AA83-B8C14B131D32}|CPEI_MFG\\CPEI_MFG.csproj|D:\\2.C#\\MidleWare\\Simple Program\\cpei_mfg\\services\\dhcp\\ippool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{46AA41EE-E9C8-4FAF-AA83-B8C14B131D32}|CPEI_MFG\\CPEI_MFG.csproj|solutionrelative:cpei_mfg\\services\\dhcp\\ippool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{46AA41EE-E9C8-4FAF-AA83-B8C14B131D32}|CPEI_MFG\\CPEI_MFG.csproj|D:\\2.C#\\MidleWare\\Simple Program\\cpei_mfg\\services\\dhcp\\dhcpserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{46AA41EE-E9C8-4FAF-AA83-B8C14B131D32}|CPEI_MFG\\CPEI_MFG.csproj|solutionrelative:cpei_mfg\\services\\dhcp\\dhcpserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{46AA41EE-E9C8-4FAF-AA83-B8C14B131D32}|CPEI_MFG\\CPEI_MFG.csproj|d:\\2.c#\\midleware\\simple program\\cpei_mfg\\services\\condition\\checktestfailed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46AA41EE-E9C8-4FAF-AA83-B8C14B131D32}|CPEI_MFG\\CPEI_MFG.csproj|solutionrelative:cpei_mfg\\services\\condition\\checktestfailed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,130 +38,101 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ListMac.cs",
+              "DocumentMoniker": "D:\\2.C#\\MidleWare\\Simple Program\\CPEI_MFG\\Services\\ListMac.cs",
+              "RelativeDocumentMoniker": "CPEI_MFG\\Services\\ListMac.cs",
+              "ToolTip": "D:\\2.C#\\MidleWare\\Simple Program\\CPEI_MFG\\Services\\ListMac.cs",
+              "RelativeToolTip": "CPEI_MFG\\Services\\ListMac.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAIwDIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T07:57:12.567Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ErrorCodeAnalysis.cs",
-              "DocumentMoniker": "D:\\2.C#\\MidleWare\\Simple Program\\CPEI_MFG\\Services\\ErrorCode\\ErrorCodeAnalysis.cs",
-              "RelativeDocumentMoniker": "CPEI_MFG\\Services\\ErrorCode\\ErrorCodeAnalysis.cs",
-              "ToolTip": "D:\\2.C#\\MidleWare\\Simple Program\\CPEI_MFG\\Services\\ErrorCode\\ErrorCodeAnalysis.cs",
-              "RelativeToolTip": "CPEI_MFG\\Services\\ErrorCode\\ErrorCodeAnalysis.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAgwBYAAABCAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "TestModel.cs",
+              "DocumentMoniker": "D:\\2.C#\\MidleWare\\Simple Program\\CPEI_MFG\\Model\\TestModel.cs",
+              "RelativeDocumentMoniker": "CPEI_MFG\\Model\\TestModel.cs",
+              "ToolTip": "D:\\2.C#\\MidleWare\\Simple Program\\CPEI_MFG\\Model\\TestModel.cs",
+              "RelativeToolTip": "CPEI_MFG\\Model\\TestModel.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAvwA8AAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T01:48:05.15Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ErrorCodeMapper.cs",
-              "DocumentMoniker": "D:\\2.C#\\MidleWare\\Simple Program\\CPEI_MFG\\Services\\ErrorCode\\ErrorCodeMapper.cs",
-              "RelativeDocumentMoniker": "CPEI_MFG\\Services\\ErrorCode\\ErrorCodeMapper.cs",
-              "ToolTip": "D:\\2.C#\\MidleWare\\Simple Program\\CPEI_MFG\\Services\\ErrorCode\\ErrorCodeMapper.cs",
-              "RelativeToolTip": "CPEI_MFG\\Services\\ErrorCode\\ErrorCodeMapper.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAkwDAAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T01:46:15.972Z"
+              "WhenOpened": "2025-12-01T07:44:36.465Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "MySftp.cs",
-              "DocumentMoniker": "D:\\2.C#\\MidleWare\\Simple Program\\CPEI_MFG\\communicate\\MySftp.cs",
-              "RelativeDocumentMoniker": "CPEI_MFG\\communicate\\MySftp.cs",
-              "ToolTip": "D:\\2.C#\\MidleWare\\Simple Program\\CPEI_MFG\\communicate\\MySftp.cs",
-              "RelativeToolTip": "CPEI_MFG\\communicate\\MySftp.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAO4AAAAAAAAAAAAAAA==",
+              "Title": "InvokeUtil.cs",
+              "DocumentMoniker": "D:\\2.C#\\MidleWare\\Simple Program\\CPEI_MFG\\Common\\InvokeUtil.cs",
+              "RelativeDocumentMoniker": "CPEI_MFG\\Common\\InvokeUtil.cs",
+              "ToolTip": "D:\\2.C#\\MidleWare\\Simple Program\\CPEI_MFG\\Common\\InvokeUtil.cs",
+              "RelativeToolTip": "CPEI_MFG\\Common\\InvokeUtil.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T01:44:59.711Z"
+              "WhenOpened": "2025-12-01T07:41:58.527Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Form1.cs",
               "DocumentMoniker": "D:\\2.C#\\MidleWare\\Simple Program\\CPEI_MFG\\View\\Form1.cs",
               "RelativeDocumentMoniker": "CPEI_MFG\\View\\Form1.cs",
               "ToolTip": "D:\\2.C#\\MidleWare\\Simple Program\\CPEI_MFG\\View\\Form1.cs",
               "RelativeToolTip": "CPEI_MFG\\View\\Form1.cs",
-              "ViewState": "AgIAAKMCAAAAAAAAAAAUwMgCAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAAKQBAAAAAAAAAAArwLsBAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-19T11:58:10.971Z",
+              "WhenOpened": "2025-12-01T07:41:54.1Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "DhcpControl.cs",
-              "DocumentMoniker": "D:\\2.C#\\MidleWare\\Simple Program\\CPEI_MFG\\View\\DhcpControl.cs",
-              "RelativeDocumentMoniker": "CPEI_MFG\\View\\DhcpControl.cs",
-              "ToolTip": "D:\\2.C#\\MidleWare\\Simple Program\\CPEI_MFG\\View\\DhcpControl.cs",
-              "RelativeToolTip": "CPEI_MFG\\View\\DhcpControl.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABwAAAAPAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "CheckTestFailed.cs",
+              "DocumentMoniker": "D:\\2.C#\\MidleWare\\Simple Program\\CPEI_MFG\\Services\\Condition\\CheckTestFailed.cs",
+              "RelativeDocumentMoniker": "CPEI_MFG\\Services\\Condition\\CheckTestFailed.cs",
+              "ToolTip": "D:\\2.C#\\MidleWare\\Simple Program\\CPEI_MFG\\Services\\Condition\\CheckTestFailed.cs",
+              "RelativeToolTip": "CPEI_MFG\\Services\\Condition\\CheckTestFailed.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-19T11:56:51.518Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "DhcpControl.cs [Design]",
-              "DocumentMoniker": "D:\\2.C#\\MidleWare\\Simple Program\\CPEI_MFG\\View\\DhcpControl.cs",
-              "RelativeDocumentMoniker": "CPEI_MFG\\View\\DhcpControl.cs",
-              "ToolTip": "D:\\2.C#\\MidleWare\\Simple Program\\CPEI_MFG\\View\\DhcpControl.cs [Design]",
-              "RelativeToolTip": "CPEI_MFG\\View\\DhcpControl.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-19T11:56:47.04Z"
+              "WhenOpened": "2025-12-01T06:25:30.819Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "UnitCounter.cs",
+              "DocumentMoniker": "D:\\2.C#\\MidleWare\\Simple Program\\CPEI_MFG\\Services\\Condition\\UnitCounter.cs",
+              "RelativeDocumentMoniker": "CPEI_MFG\\Services\\Condition\\UnitCounter.cs",
+              "ToolTip": "D:\\2.C#\\MidleWare\\Simple Program\\CPEI_MFG\\Services\\Condition\\UnitCounter.cs",
+              "RelativeToolTip": "CPEI_MFG\\Services\\Condition\\UnitCounter.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAWwCkAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T04:16:03.461Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "D:\\2.C#\\MidleWare\\Simple Program\\CPEI_MFG\\View\\Form1.cs",
               "RelativeDocumentMoniker": "CPEI_MFG\\View\\Form1.cs",
               "ToolTip": "D:\\2.C#\\MidleWare\\Simple Program\\CPEI_MFG\\View\\Form1.cs [Design]",
               "RelativeToolTip": "CPEI_MFG\\View\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-19T11:56:39.085Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "IpPool.cs",
-              "DocumentMoniker": "D:\\2.C#\\MidleWare\\Simple Program\\CPEI_MFG\\Services\\DHCP\\IpPool.cs",
-              "RelativeDocumentMoniker": "CPEI_MFG\\Services\\DHCP\\IpPool.cs",
-              "ToolTip": "D:\\2.C#\\MidleWare\\Simple Program\\CPEI_MFG\\Services\\DHCP\\IpPool.cs",
-              "RelativeToolTip": "CPEI_MFG\\Services\\DHCP\\IpPool.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAArwHgAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-19T11:42:12.489Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "DhcpServer.cs",
-              "DocumentMoniker": "D:\\2.C#\\MidleWare\\Simple Program\\CPEI_MFG\\Services\\DHCP\\DhcpServer.cs",
-              "RelativeDocumentMoniker": "CPEI_MFG\\Services\\DHCP\\DhcpServer.cs",
-              "ToolTip": "D:\\2.C#\\MidleWare\\Simple Program\\CPEI_MFG\\Services\\DHCP\\DhcpServer.cs",
-              "RelativeToolTip": "CPEI_MFG\\Services\\DHCP\\DhcpServer.cs",
-              "ViewState": "AgIAAHwAAAAAAAAAAAAWwJIAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-19T10:46:20.778Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Dhcp.cs",
-              "DocumentMoniker": "D:\\2.C#\\MidleWare\\Simple Program\\CPEI_MFG\\Services\\DHCP\\Dhcp.cs",
-              "RelativeDocumentMoniker": "CPEI_MFG\\Services\\DHCP\\Dhcp.cs",
-              "ToolTip": "D:\\2.C#\\MidleWare\\Simple Program\\CPEI_MFG\\Services\\DHCP\\Dhcp.cs",
-              "RelativeToolTip": "CPEI_MFG\\Services\\DHCP\\Dhcp.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAjwDwAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-19T10:23:29.99Z"
+              "WhenOpened": "2025-11-29T03:27:07.755Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }

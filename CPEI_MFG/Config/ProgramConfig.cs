@@ -26,6 +26,7 @@ namespace CPEI_MFG.Config
         public int InputMaxLength { get; set; } = 19;
         public int MacIndex { get; set; } = 0;
         public string DUT_IP { get; set; } = "192.168.1.20";
+        public CheckListMacConfig CheckListMac { get; set; } = new CheckListMacConfig();
         public LoggerConfig LoggerConfig { get; set; } = new LoggerConfig();
         public VersionConfig VersionConfig { get; set; } = new VersionConfig();
         public SfisConfig SfisConfig { get; set; } = new SfisConfig();
@@ -37,6 +38,5 @@ namespace CPEI_MFG.Config
         public ErrorCodeConfig ErrorCodeConfig { get; set; } = new ErrorCodeConfig();
         public WorkerCheckerConfig WorkerChecker { get; set; } = new WorkerCheckerConfig();
         public SerialControlConfig SerialControl { get; set; } = new SerialControlConfig();
-
     }
 }

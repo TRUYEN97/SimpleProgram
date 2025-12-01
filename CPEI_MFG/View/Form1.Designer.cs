@@ -47,13 +47,17 @@
             this.Label_Retest = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel6 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel7 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel8 = new System.Windows.Forms.ToolStripStatusLabel();
             this.Label_Time = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel8 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel9 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel10 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel11 = new System.Windows.Forms.ToolStripStatusLabel();
             this.label_Ver = new System.Windows.Forms.ToolStripStatusLabel();
             this.lbVer = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel12 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel11 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel13 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lbRj45Count = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel14 = new System.Windows.Forms.ToolStripStatusLabel();
             this.rb_SfisON = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.listView1 = new System.Windows.Forms.ListView();
@@ -108,8 +112,8 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.LbStatus = new System.Windows.Forms.Label();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -146,13 +150,17 @@
             this.Label_Retest,
             this.toolStripStatusLabel6,
             this.toolStripStatusLabel7,
-            this.toolStripStatusLabel8,
             this.Label_Time,
+            this.toolStripStatusLabel8,
             this.toolStripStatusLabel9,
             this.toolStripStatusLabel10,
-            this.toolStripStatusLabel11,
             this.label_Ver,
-            this.lbVer});
+            this.lbVer,
+            this.toolStripStatusLabel12,
+            this.toolStripStatusLabel11,
+            this.toolStripStatusLabel13,
+            this.lbRj45Count,
+            this.toolStripStatusLabel14});
             this.statusStrip1.Location = new System.Drawing.Point(0, 533);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1006, 22);
@@ -170,6 +178,7 @@
             this.Label_Pass.Name = "Label_Pass";
             this.Label_Pass.Size = new System.Drawing.Size(13, 17);
             this.Label_Pass.Text = "0";
+            this.Label_Pass.DoubleClick += new System.EventHandler(this.Label_Pass_DoubleClick);
             // 
             // toolStripStatusLabel2
             // 
@@ -188,6 +197,7 @@
             this.Label_Fail.Name = "Label_Fail";
             this.Label_Fail.Size = new System.Drawing.Size(13, 17);
             this.Label_Fail.Text = "0";
+            this.Label_Fail.DoubleClick += new System.EventHandler(this.Label_Fail_DoubleClick);
             // 
             // toolStripStatusLabel4
             // 
@@ -219,16 +229,16 @@
             this.toolStripStatusLabel7.Size = new System.Drawing.Size(25, 17);
             this.toolStripStatusLabel7.Text = "      ";
             // 
+            // Label_Time
+            // 
+            this.Label_Time.Name = "Label_Time";
+            this.Label_Time.Size = new System.Drawing.Size(0, 17);
+            // 
             // toolStripStatusLabel8
             // 
             this.toolStripStatusLabel8.Name = "toolStripStatusLabel8";
             this.toolStripStatusLabel8.Size = new System.Drawing.Size(62, 17);
             this.toolStripStatusLabel8.Text = "Test Time :";
-            // 
-            // Label_Time
-            // 
-            this.Label_Time.Name = "Label_Time";
-            this.Label_Time.Size = new System.Drawing.Size(0, 17);
             // 
             // toolStripStatusLabel9
             // 
@@ -242,12 +252,6 @@
             this.toolStripStatusLabel10.Size = new System.Drawing.Size(25, 17);
             this.toolStripStatusLabel10.Text = "      ";
             // 
-            // toolStripStatusLabel11
-            // 
-            this.toolStripStatusLabel11.Name = "toolStripStatusLabel11";
-            this.toolStripStatusLabel11.Size = new System.Drawing.Size(51, 17);
-            this.toolStripStatusLabel11.Text = "Version: ";
-            // 
             // label_Ver
             // 
             this.label_Ver.Name = "label_Ver";
@@ -257,6 +261,35 @@
             // 
             this.lbVer.Name = "lbVer";
             this.lbVer.Size = new System.Drawing.Size(0, 17);
+            // 
+            // toolStripStatusLabel12
+            // 
+            this.toolStripStatusLabel12.Name = "toolStripStatusLabel12";
+            this.toolStripStatusLabel12.Size = new System.Drawing.Size(0, 17);
+            // 
+            // toolStripStatusLabel11
+            // 
+            this.toolStripStatusLabel11.Name = "toolStripStatusLabel11";
+            this.toolStripStatusLabel11.Size = new System.Drawing.Size(37, 17);
+            this.toolStripStatusLabel11.Text = "          ";
+            // 
+            // toolStripStatusLabel13
+            // 
+            this.toolStripStatusLabel13.Name = "toolStripStatusLabel13";
+            this.toolStripStatusLabel13.Size = new System.Drawing.Size(36, 17);
+            this.toolStripStatusLabel13.Text = "RJ45: ";
+            // 
+            // lbRj45Count
+            // 
+            this.lbRj45Count.Name = "lbRj45Count";
+            this.lbRj45Count.Size = new System.Drawing.Size(24, 17);
+            this.lbRj45Count.Text = "0/0";
+            // 
+            // toolStripStatusLabel14
+            // 
+            this.toolStripStatusLabel14.Name = "toolStripStatusLabel14";
+            this.toolStripStatusLabel14.Size = new System.Drawing.Size(55, 17);
+            this.toolStripStatusLabel14.Text = "                ";
             // 
             // rb_SfisON
             // 
@@ -417,6 +450,7 @@
             this.btClear.TabIndex = 23;
             this.btClear.Text = "Clear\r\n";
             this.btClear.UseVisualStyleBackColor = true;
+            this.btClear.Click += new System.EventHandler(this.btClear_Click);
             // 
             // groupBox4
             // 
@@ -827,11 +861,6 @@
             this.LbStatus.Text = "Standby";
             this.LbStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
             // tabPage3
             // 
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
@@ -841,6 +870,11 @@
             this.tabPage3.TabIndex = 6;
             this.tabPage3.Text = "DHCP";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // Form1
             // 
@@ -909,7 +943,6 @@
         private System.Windows.Forms.Label label_scan;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel9;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel10;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel11;
         private System.Windows.Forms.ToolStripStatusLabel label_Ver;
         private System.Windows.Forms.Timer timer_Count;
         private System.Windows.Forms.GroupBox groupBox3;
@@ -959,6 +992,11 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.RadioButton rb_SfisOFF;
         private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel12;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel11;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel13;
+        private System.Windows.Forms.ToolStripStatusLabel lbRj45Count;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel14;
     }
 }
 

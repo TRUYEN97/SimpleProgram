@@ -1,7 +1,9 @@
 ﻿using CPEI_MFG.Common;
 using CPEI_MFG.Communicate;
 using CPEI_MFG.Config;
+using CPEI_MFG.Config.TestCondition;
 using CPEI_MFG.Model;
+using CPEI_MFG.Service;
 using CPEI_MFG.Service.Condition;
 using CPEI_MFG.Services;
 using CPEI_MFG.Services.DHCP;
@@ -27,7 +29,8 @@ namespace CPEI_MFG.View
         private readonly TestModel testModel;
         private readonly Dhcp dhcp;
         private readonly GoldenVerify goldenVerify;
-        private readonly CheckTestFailedCondition checkTestFailed;
+        private readonly CheckTestFailed checkTestFailed;
+        private readonly UnitCounter unitCounter;
         private readonly FtuService ftuService;
         private readonly LogAnalysis logAnalysis;
         private readonly Sfis sfis;
@@ -41,7 +44,6 @@ namespace CPEI_MFG.View
         {
             InitializeComponent();
             testModel = new TestModel();
-
             dhcp = new Dhcp();
             dhcp.WriteInfoLog += WriteDebugLog;
 
@@ -50,7 +52,8 @@ namespace CPEI_MFG.View
             sfis.WriteInfoLog += WriteInfoLog;
 
             goldenVerify = CheckConditionFactory.GetGoldenVerifyInstanceOf(0);
-            checkTestFailed = CheckConditionFactory.GetCheckTestFailedConditionInstanceOf(0);
+            checkTestFailed = CheckConditionFactory.GetCheckTestFailedInstanceOf(0);
+            unitCounter = CheckConditionFactory.GetUnitCounterInstanceOf(0);
 
             var ccdChecker = new CcdChecker(testModel);
             ccdChecker.WriteLog += WriteDebugLog;
@@ -73,10 +76,10 @@ namespace CPEI_MFG.View
         {
             try
             {
-                testModel.AppVer = "V2025.11.24";
+                testModel.AppVer = "V2025.12.01";
                 IPHostEntry host;
                 host = Dns.GetHostEntry(Dns.GetHostName());
-                for (int i = 0; i < host.AddressList.Count(); i++)
+                for (int i = 0; i < host.AddressList.Length; i++)
                 {
                     if (host.AddressList[i].IsIPv6LinkLocal) continue;
                     if (host.AddressList[i].IsIPv6Multicast) continue;
@@ -90,6 +93,7 @@ namespace CPEI_MFG.View
                 }
                 testModel.PcName = Environment.MachineName.Trim();
                 if (!sfis.Init()
+                    || !ListMac.Init()
                     || !dhcp.Init()
                     || !logAnalysis.Init()
                     )
@@ -98,6 +102,7 @@ namespace CPEI_MFG.View
                 }
                 InitGolden();
                 InitTestCondition();
+                InitCounter();
                 InitializeFormUI();
                 InitializeFormSetting();
                 InitListView1();
@@ -115,6 +120,18 @@ namespace CPEI_MFG.View
 
         }
 
+        private void InitCounter()
+        {
+            var counterConfig = ProgramConfig?.TestCondition?.CounterConfig;
+            if (counterConfig == null)
+            {
+                MessageBox.Show("counterConfig == null");
+                Application.Exit();
+            }
+            unitCounter.IsEnable = counterConfig.IsEnable;
+            unitCounter.MaxRJ45Count = counterConfig.MaxRJ45Count;
+        }
+
         private void InitTestCondition()
         {
             var testConditionConfig = ProgramConfig.TestCondition;
@@ -123,9 +140,9 @@ namespace CPEI_MFG.View
                 MessageBox.Show("testConditionConfig == null");
                 Application.Exit();
             }
-            checkTestFailed.EnableFailCheck = testConditionConfig.IsEnableContinueFail;
-            checkTestFailed.EnableOldMac = testConditionConfig.IsEnableOldMacFail;
-            checkTestFailed.Spec = testConditionConfig.MaxContinueFailSpec;
+            checkTestFailed.EnableOldMac = testConditionConfig.IsCheckMacOldEnable;
+            checkTestFailed.EnableFailCheck = testConditionConfig.ContinueFailConfig.IsEnable;
+            checkTestFailed.Spec = testConditionConfig.ContinueFailConfig.MaxFailCount;
         }
 
         private void InitGolden()
@@ -191,16 +208,16 @@ namespace CPEI_MFG.View
 
         private void UpdatePassFailNum()
         {
-
-            this.Label_Pass.Text = Convert.ToString(testModel.PassNum);
-            this.Label_Fail.Text = Convert.ToString(testModel.FailNum);
-            if (Convert.ToDecimal(testModel.FailNum) == 0)
+            this.Label_Pass.Text = Convert.ToString(unitCounter.PassCount);
+            this.Label_Fail.Text = Convert.ToString(unitCounter.FailCount);
+            this.lbRj45Count.Text = $"{unitCounter.RJ45Count}/{unitCounter.MaxRJ45Count}";
+            if (Convert.ToDecimal(unitCounter.FailCount) == 0)
             {
                 this.Label_Retest.Text = "0.00%";
             }
             else
             {
-                Decimal nRetestRate = Convert.ToDecimal(testModel.FailNum) / Convert.ToDecimal(testModel.FailNum + testModel.PassNum) * 100;
+                Decimal nRetestRate = Convert.ToDecimal(unitCounter.FailCount) / Convert.ToDecimal(unitCounter.FailCount + unitCounter.PassCount) * 100;
                 if (nRetestRate > 5)
                 {
                     this.Label_Retest.ForeColor = Color.Red;
@@ -246,8 +263,8 @@ namespace CPEI_MFG.View
             this.listView1.Items[5].SubItems.Add(verConfig.BOMVer);
             this.listView1.Items[6].SubItems.Add(verConfig.RegionVer);
             this.listView1.Items[7].SubItems.Add(checkTestFailed.Count.ToString());
-            this.listView1.Items[8].SubItems.Add(testModel.PassNum.ToString());
-            this.listView1.Items[9].SubItems.Add(testModel.FailNum.ToString());
+            this.listView1.Items[8].SubItems.Add(unitCounter.PassCount.ToString());
+            this.listView1.Items[9].SubItems.Add(unitCounter.FailCount.ToString());
             this.listView1.Visible = true;
         }
         private void SetStatusFlag(STATUSFLAG flag, string errorCode = "", string mess = "")
@@ -275,7 +292,8 @@ namespace CPEI_MFG.View
                         ActiveControl = txtInput;
                         break;
                     case STATUSFLAG.RUN:
-                        WriteInfoLog($"{ProgramConfig.Station}  Test Pass");
+                        unitCounter.RJ45Count++;
+                        WriteInfoLog($"{ProgramConfig.Station}  Testting...");
                         this.groupBox3.Enabled = false;
                         this.tabControl1.SelectedIndex = 1;
                         this.testModel.CycleTime = 0;
@@ -290,6 +308,7 @@ namespace CPEI_MFG.View
                         ActiveControl = txtInput;
                         break;
                     case STATUSFLAG.PASS:
+                        WriteInfoLog($"{ProgramConfig.Station}  Test Pass");
                         this.groupBox3.Enabled = true;
                         txtInput.Focus();
                         txtInput.Text = string.Empty;
@@ -299,7 +318,7 @@ namespace CPEI_MFG.View
                         this.label_Result.ForeColor = Color.Green;
                         this.label_Error.Visible = false;
                         this.txtInput.Text = "";
-                        this.testModel.PassNum++;
+                        unitCounter.PassCount++;
                         LbInput.Text = string.Empty;
                         this.btClear.Enabled = true;
                         this.LbStatus.Text = string.IsNullOrWhiteSpace(mess) ? "PASS" : $"PASS\r\n{mess}";
@@ -318,7 +337,7 @@ namespace CPEI_MFG.View
                         this.label_Error.Text = $"ErrorCode: \n {errorCode}";
                         this.label_Error.Visible = true;
                         this.timer_Count.Enabled = false;
-                        this.testModel.FailNum++;
+                        this.unitCounter.FailCount++;
                         LbInput.Text = string.Empty;
                         this.btClear.Enabled = true;
                         this.LbStatus.Text = string.IsNullOrWhiteSpace(mess) ? "FAIL" : $"FAIL\r\n{errorCode}\r\n{mess}";
@@ -420,6 +439,17 @@ namespace CPEI_MFG.View
                 {
                     MessageBox.Show("Pls! Test Bad Golden");
                     SetStatusFlag(STATUSFLAG.STANDBY);
+                    return;
+                }
+                if (!ListMac.ContainsMac(testModel.ScanMAC))
+                {
+                    SetStatusFlag(STATUSFLAG.ERROR, "List MAC", "MAC không có trong danh sách cho phép!");
+                    return;
+                }
+                if (unitCounter.IsRj45OutOfUseSpec)
+                {
+                    MessageBox.Show($"The RJ45 count is out of Spec: '{unitCounter.RJ45Count >= unitCounter.MaxRJ45Count}'");
+                    this.SetStatusFlag(STATUSFLAG.STANDBY);
                     return;
                 }
                 if (checkTestFailed.IsFailedTimeOutOfSpec)
@@ -820,6 +850,38 @@ namespace CPEI_MFG.View
             {
                 return;
             }
+        }
+
+        private void lbRj45Count_DoubleClick(object sender, EventArgs e)
+        {
+            if (!InputForm.GetPassword("Password", "Pls input the password. Vui lòng nhập mật khẩu", out string pw))
+            {
+                return;
+            }
+            if (pw != ProgramConfig?.TestCondition?.CounterConfig?.ResetCounterPassword)
+            {
+                MessageBox.Show("Invalid password! Mật khẩu không hợp lệ!", "Warning");
+                return;
+            }
+            unitCounter.RJ45Count = 0;
+            MessageBox.Show("Reset RJ45.");
+        }
+
+        private void Label_Fail_DoubleClick(object sender, EventArgs e)
+        {
+            unitCounter.FailCount = 0;
+            unitCounter.PassCount = 0;
+        }
+
+        private void Label_Pass_DoubleClick(object sender, EventArgs e)
+        {
+            unitCounter.FailCount = 0;
+            unitCounter.PassCount = 0;
+        }
+
+        private void btClear_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

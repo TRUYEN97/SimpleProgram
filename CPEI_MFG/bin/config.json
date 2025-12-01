@@ -8,6 +8,10 @@
   "InputMaxLength": 19,
   "MacIndex": 0,
   "DUT_IP": "192.168.1.20",
+  "CheckListMac": {
+    "IsEnable": false,
+    "FilePath": "../ListMacs.txt"
+  },
   "LoggerConfig": {
     "Host": "192.168.240.52",
     "Port": 4422,
@@ -84,9 +88,16 @@
     "Time": 12.0
   },
   "TestCondition": {
-    "IsEnableContinueFail": false,
-    "IsEnableOldMacFail": false,
-    "MaxContinueFailSpec": 3
+    "IsCheckMacOldEnable": true,
+    "ContinueFailConfig": {
+      "IsEnable": true,
+      "MaxFailCount": 3
+    },
+    "CounterConfig": {
+      "IsEnable": true,
+      "ResetCounterPassword": "ubnt!!",
+      "MaxRJ45Count": 4500
+    }
   },
   "ErrorCodeConfig": {
     "SftpConfig": {

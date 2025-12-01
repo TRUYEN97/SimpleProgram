@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace CPEI_MFG.Service.Condition
 {
     public static class CheckConditionFactory
     {
-        private static readonly Dictionary<int, CheckTestFailedCondition> checkConditions = new Dictionary<int, CheckTestFailedCondition>();
+        private static readonly Dictionary<int, CheckTestFailed> checkConditions = new Dictionary<int, CheckTestFailed>();
         private static readonly Dictionary<int, GoldenVerify> goldenVerifys = new Dictionary<int, GoldenVerify>();
-        public static CheckTestFailedCondition GetCheckTestFailedConditionInstanceOf(int index)
+        private static readonly Dictionary<int, UnitCounter> initCounterRegistrys = new Dictionary<int, UnitCounter>();
+        public static CheckTestFailed GetCheckTestFailedInstanceOf(int index)
         {
             if (index < 0)
             {
@@ -17,7 +17,7 @@ namespace CPEI_MFG.Service.Condition
             {
                 return checkCondition;
             }
-            checkCondition = new CheckTestFailedCondition(index);
+            checkCondition = new CheckTestFailed(index);
             checkConditions.Add(index, checkCondition);
             return checkCondition;
         }
@@ -34,6 +34,21 @@ namespace CPEI_MFG.Service.Condition
             goldenVerify = new GoldenVerify(index);
             goldenVerifys.Add(index, goldenVerify);
             return goldenVerify;
+        }
+
+        public static UnitCounter GetUnitCounterInstanceOf(int index)
+        {
+            if (index < 0)
+            {
+                index = 0;
+            }
+            if (initCounterRegistrys.TryGetValue(index, out var ins))
+            {
+                return ins;
+            }
+            ins = new UnitCounter(index);
+            initCounterRegistrys.Add(index, ins);
+            return ins;
         }
     }
 }
