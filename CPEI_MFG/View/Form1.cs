@@ -1,9 +1,7 @@
 ﻿using CPEI_MFG.Common;
 using CPEI_MFG.Communicate;
 using CPEI_MFG.Config;
-using CPEI_MFG.Config.TestCondition;
 using CPEI_MFG.Model;
-using CPEI_MFG.Service;
 using CPEI_MFG.Service.Condition;
 using CPEI_MFG.Services;
 using CPEI_MFG.Services.DHCP;
@@ -21,6 +19,7 @@ using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Org.BouncyCastle.Math.EC.ECCurve;
 
 namespace CPEI_MFG.View
 {
@@ -76,7 +75,7 @@ namespace CPEI_MFG.View
         {
             try
             {
-                testModel.AppVer = "V2025.12.01";
+                testModel.AppVer = "V2025.12.02";
                 IPHostEntry host;
                 host = Dns.GetHostEntry(Dns.GetHostName());
                 for (int i = 0; i < host.AddressList.Length; i++)
@@ -96,6 +95,7 @@ namespace CPEI_MFG.View
                     || !ListMac.Init()
                     || !dhcp.Init()
                     || !logAnalysis.Init()
+                    || CheckPcName()
                     )
                 {
                     Application.Exit();
@@ -106,11 +106,6 @@ namespace CPEI_MFG.View
                 InitializeFormUI();
                 InitializeFormSetting();
                 InitListView1();
-                if (!testModel.PcName.ToUpper().Contains(ProgramConfig.Station.ToUpper().Trim()))
-                {
-                    MessageBox.Show("Vui lòng gọi TE online để kiểm tra lại tên máy!");
-                    Application.Exit();
-                }
             }
             catch (Exception ex)
             {
@@ -118,6 +113,34 @@ namespace CPEI_MFG.View
                 Application.Exit();
             }
 
+        }
+
+        private bool CheckPcName()
+        {
+            string pcKey = GetStationKey(ProgramConfig.Model, ProgramConfig.Station);
+            if (!testModel.PcName.Contains(pcKey))
+            {
+                MessageBox.Show($"Vui lòng kiểm tra lại. Tên máy tính({testModel.PcName}) Không chính xác!\r\nVui lòng tìm TE để đổi lại tên máy tính bao gồm ({pcKey}).");
+                return false;
+            }
+            if (testModel.PcName.Length != 12)
+            {
+                MessageBox.Show("Tên máy tính khác 12 kí tự!");
+                return false;
+            }
+            return true;
+        }
+
+        private string GetStationKey(string model, string station)
+        {
+            if (station.Length > 4)
+            {
+                return $"{station}".ToUpper();
+            }
+            int subModelLength = 9 - station.Length;
+            subModelLength = subModelLength < 0 ? 0 : subModelLength;
+            string subModelName = model.Length > subModelLength ? model.Substring(0, subModelLength) : model;
+            return $"{subModelName}{station}-".ToUpper();
         }
 
         private void InitCounter()

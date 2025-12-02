@@ -17,8 +17,8 @@ namespace CPEI_MFG.Config
             if (!Init(CfPath))
             {
                 _programConfig = new ProgramConfig();
+                UpdateCf(CfPath);
             }
-            UpdateCf(CfPath);
         }
         public static ProgramConfig ProgramConfig
         {
